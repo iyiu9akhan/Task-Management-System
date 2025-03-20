@@ -73,14 +73,17 @@ body {
 }
 #container .save_btn:active {
   color: #6cc070;
-  transform: translateX(-3px) rotate(-30deg);
+  /* transform: translateX(-3px) rotate(-30deg); */
   transition: all linear 0.05s;
+}
+#container .tasks_field {
+  padding-bottom: 25px;
 }
 #container .task_box {
   display: flex;
   /* justify-content: space-between; */
   background-color: #191933;
-  padding: 12px;
+  padding: 10px;
   margin-bottom: 15px;
   align-items: center;
   border-radius: 12px;
@@ -92,6 +95,17 @@ body {
 }
 #container .check_task {
   accent-color: #6cc070;
+}
+#container .bi-toggle-off {
+  color: #ffffff;
+  font-size: 35px;
+  cursor: pointer;
+  /* color: #6cc070; */
+}
+#container .bi-toggle-on {
+  color: #6cc070;
+  font-size: 35px;
+  cursor: pointer;
 }
 #container .task {
   color: #ffffff;
@@ -105,4 +119,47 @@ body {
   margin-left: auto;
   color: #bb2124;
   font-size: 22px;
+}
+#container .btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+#container .btn .delete_all {
+  background-color: #bb2124;
+  border: none;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#container .btn .select_all {
+  background-color: #6cc070;
+  border: none;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#container .btn .bi-trash-fill {
+  text-transform: capitalize;
+  background-color: #bb2124;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  margin-right: 8px;
+}
+#container .btn .bi-check-all {
+  text-transform: capitalize;
+  background-color: #6cc070;
+  border: none;
+  color: #ffffff;
+  font-size: 30px;
+  margin-right: 8px;
+}
+#container .btn h6 {
+  text-transform: capitalize;
+  font-size: 20px;
+  color: #ffffff;
 }
