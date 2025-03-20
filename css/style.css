@@ -79,7 +79,7 @@ body {
 #container .tasks_field {
   padding-bottom: 25px;
 }
-#container .task_box {
+#container .tasks_field .task_box {
   display: flex;
   /* justify-content: space-between; */
   background-color: #191933;
@@ -88,43 +88,44 @@ body {
   align-items: center;
   border-radius: 12px;
 }
-#container .check_task {
+#container .tasks_field .check_task {
   cursor: pointer;
   height: 22px;
   width: 22px;
 }
-#container .check_task {
+#container .tasks_field .check_task {
   accent-color: #6cc070;
 }
-#container .bi-toggle-off {
+#container .tasks_field .bi-toggle-off {
   color: #ffffff;
   font-size: 35px;
   cursor: pointer;
   /* color: #6cc070; */
 }
-#container .bi-toggle-on {
+#container .tasks_field .bi-toggle-on {
   color: #6cc070;
   font-size: 35px;
   cursor: pointer;
 }
-#container .task {
+#container .tasks_field .task {
   color: #ffffff;
   text-transform: capitalize;
   font-size: 18px;
   margin-left: 15px;
 }
-#container .delete_task {
+#container .tasks_field .delete_task {
   /* flex-grow: 5 */
   cursor: pointer;
   margin-left: auto;
   color: #bb2124;
   font-size: 22px;
 }
-#container .btn {
+#container .tasks_field .btn {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 35px;
 }
-#container .btn .delete_all {
+#container .tasks_field .btn .delete_all {
   background-color: #bb2124;
   border: none;
   padding: 10px 25px;
@@ -133,7 +134,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-#container .btn .select_all {
+#container .tasks_field .btn .select_all {
   background-color: #6cc070;
   border: none;
   padding: 10px 25px;
@@ -142,7 +143,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-#container .btn .bi-trash-fill {
+#container .tasks_field .btn .bi-trash-fill {
   text-transform: capitalize;
   background-color: #bb2124;
   border: none;
@@ -150,7 +151,7 @@ body {
   font-size: 22px;
   margin-right: 8px;
 }
-#container .btn .bi-check-all {
+#container .tasks_field .btn .bi-check-all {
   text-transform: capitalize;
   background-color: #6cc070;
   border: none;
@@ -158,11 +159,8 @@ body {
   font-size: 30px;
   margin-right: 8px;
 }
-#container .btn h6 {
+#container .tasks_field .btn h6 {
   text-transform: capitalize;
   font-size: 20px;
   color: #ffffff;
-}
-.input_box::placeholder {
-  color: var(--placeholder-color, gray);
 }
