@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TO DO List</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
     <div id="container">
-        <div class="content_box">
-            <h1 class="content_heading">to do list</h1>
-            <div class="input_field">
-                <input class="input_box" type="text" placeholder="add new task . . .">
-            <i class="bi bi-pin-angle-fill save_input"></i>
+      <div class="content_box">
+        <h1 class="content_heading">to do list</h1>
+        <div class="input_field">
+          <input
+            class="input_box"
+            type="text"
+            placeholder="add new task . . ."
+          />
+          <i class="bi bi-pin-angle-fill save_btn"></i>
+        </div>
+        <div class="tasks_field">
+            <div class="task_box">
+                <input type="radio" class="check_task" max="5">
+                <p class="task">Lorem ipsum dolor sit amet. lorem15</p>
+                <i class="bi bi-trash3 delete_task"></i>
+            </div>
+            <div class="task_box">
+                <input type="radio" class="check_task" max="5">
+                <p class="task">Lorem ipsum dolor sit amet. lorem15</p>
+                <i class="bi bi-trash3 delete_task"></i>
             </div>
         </div>
+      </div>
     </div>
-
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

@@ -46,7 +46,7 @@ body {
 #container .input_field {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 #container .input_box {
   background-color: transparent;
@@ -64,15 +64,45 @@ body {
 #container .input_box:focus {
   outline: none;
 }
-#container .save_input {
+#container .save_btn {
   color: #ffffff;
   font-size: 35px;
   margin-top: 10px;
   cursor: pointer;
+  transition: all linear 0.1s;
 }
-#container .save_input:active{
-  color: #6CC070;
+#container .save_btn:active {
+  color: #6cc070;
   transform: translateX(-3px) rotate(-30deg);
-  transition: all linear .05s;
+  transition: all linear 0.05s;
 }
-
+#container .task_box {
+  display: flex;
+  /* justify-content: space-between; */
+  background-color: #191933;
+  padding: 12px;
+  margin-bottom: 15px;
+  align-items: center;
+  border-radius: 12px;
+}
+#container .check_task {
+  cursor: pointer;
+  height: 22px;
+  width: 22px;
+}
+#container .check_task {
+  accent-color: #6cc070;
+}
+#container .task {
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 18px;
+  margin-left: 15px;
+}
+#container .delete_task {
+  /* flex-grow: 5 */
+  cursor: pointer;
+  margin-left: auto;
+  color: #bb2124;
+  font-size: 22px;
+}

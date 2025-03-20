@@ -7,5 +7,5 @@ Description :
 
 Key Features:
    1. Add new tasks dynamically |
-   2. 2. Delete individual tasks with a single click |
+   2. Delete individual tasks with a single click |
    3. Select and remove multiple tasks at once for efficient management |
