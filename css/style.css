@@ -71,5 +71,8 @@ body {
   cursor: pointer;
 }
 #container .save_input:active{
-    color: #6CC070;
+  color: #6CC070;
+  transform: translateX(-3px) rotate(-30deg);
+  transition: all linear .05s;
 }
+
