@@ -48,7 +48,7 @@ body {
   justify-content: space-between;
   margin-bottom: 25px;
 }
-#container .input_box {
+#input_box {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #ffffff;
@@ -61,7 +61,7 @@ body {
   caret-color: #ffffff;
   color: #ffffff;
 }
-#container .input_box:focus {
+#input_box:focus {
   outline: none;
 }
 #container .save_btn {
@@ -162,4 +162,7 @@ body {
   text-transform: capitalize;
   font-size: 20px;
   color: #ffffff;
+}
+.input_box::placeholder {
+  color: var(--placeholder-color, gray);
 }
