@@ -37,26 +37,27 @@ const save_task = () => {
   task_box.classList.add("task_box");
   tasks_field.appendChild(task_box);
   //create task box div }
-  const task_toggle = document.createElement("i");
+  var task_toggle = document.createElement("i");
   task_toggle.classList.add("bi", "bi-toggle-off");
   task_box.appendChild(task_toggle);
 
   task_toggle.addEventListener("click", () => {
     console.log("fine");
-    task_toggle.style.transition="opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
-    task_toggle.style.opacity="0"
-    task_toggle.style.transform="scale(0.8)"
-   setTimeout(()=>{
-    if (task_toggle.classList.contains("bi-toggle-off")) {
+    task_toggle.style.transition =
+      "opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
+    task_toggle.style.opacity = "0";
+    task_toggle.style.transform = "scale(0.8)";
+    setTimeout(() => {
+      if (task_toggle.classList.contains("bi-toggle-off")) {
         task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
-      //   task_toggle.classList.add("checked");
+        //   task_toggle.classList.add("checked");
       } else {
         task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
-      //   task_toggle.classList.remove("checked");
+        //   task_toggle.classList.remove("checked");
       }
-      task_toggle.style.opacity="1"
-      task_toggle.style.transform="scale(1)"
-   },100)
+      task_toggle.style.opacity = "1";
+      task_toggle.style.transform = "scale(1)";
+    }, 100);
   });
 
   const task = document.createElement("p");
@@ -64,7 +65,6 @@ const save_task = () => {
   task_box.appendChild(task);
   task.innerHTML = input_box.value;
   input_box.value = "";
-
 
   const task_delete = document.createElement("i");
   task_delete.classList.add("bi", "bi-trash3", "delete_task");
@@ -90,6 +90,36 @@ const save_task = () => {
     var select_btn = document.createElement("button");
     select_btn.classList.add("select_all");
     btn_div.appendChild(select_btn);
+    
+select_btn.addEventListener("click",()=>{
+    let unchecked_btn = document.querySelectorAll(".bi-toggle-off, .bi-toggle-on")
+    Array.from(unchecked_btn).map((task)=>{
+        if(task.classList.contains("bi-toggle-off")){
+            
+            task.classList.replace("bi-toggle-off", "bi-toggle-on")
+        }else{
+            task.classList.replace("bi-toggle-on", "bi-toggle-off")
+            
+        }
+    })
+    
+    
+    
+    
+
+
+    // if (task_toggle.classList.contains("bi-toggle-off")) {
+    //     task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
+    //     //   task_toggle.classList.add("checked");
+    //   } 
+      
+    //   else {
+    //     task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
+    //     //   task_toggle.classList.remove("checked");
+    //   }
+})
+
+
 
     var delete_btn = document.createElement("button");
     delete_btn.classList.add("delete_all");
@@ -98,13 +128,13 @@ const save_task = () => {
     tasks_field.appendChild(btn);
   }
 
-  delete_btn.addEventListener("click",()=>{
-    let checked_tasks = document.querySelectorAll(".bi-toggle-on")
-    Array.from(checked_tasks).map(task => {
-        task.parentElement.remove(); 
+  delete_btn.addEventListener("click", () => {
+    let checked_tasks = document.querySelectorAll(".bi-toggle-on");
+    Array.from(checked_tasks).map((task) => {
+      task.parentElement.remove();
+      delete_btn_div(); // if task box == 1 , btn_div will remove {function call}
     });
-  })
-  
+  });
 
   const select_icon = document.createElement("i");
   select_icon.classList.add("bi", "bi-check-all");
