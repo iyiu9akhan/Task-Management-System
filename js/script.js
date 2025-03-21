@@ -41,12 +41,6 @@ const save_task = () => {
   task_toggle.classList.add("bi", "bi-toggle-off");
   task_box.appendChild(task_toggle);
 
-  const task = document.createElement("p");
-  task.classList.add("task");
-  task_box.appendChild(task);
-  task.innerHTML = input_box.value;
-  input_box.value = "";
-
   task_toggle.addEventListener("click", () => {
     console.log("fine");
     task_toggle.style.transition="opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
@@ -62,8 +56,15 @@ const save_task = () => {
       }
       task_toggle.style.opacity="1"
       task_toggle.style.transform="scale(1)"
-   },120)
+   },100)
   });
+
+  const task = document.createElement("p");
+  task.classList.add("task");
+  task_box.appendChild(task);
+  task.innerHTML = input_box.value;
+  input_box.value = "";
+
 
   const task_delete = document.createElement("i");
   task_delete.classList.add("bi", "bi-trash3", "delete_task");
@@ -96,6 +97,14 @@ const save_task = () => {
   } else {
     tasks_field.appendChild(btn);
   }
+
+  delete_btn.addEventListener("click",()=>{
+    let checked_tasks = document.querySelectorAll(".bi-toggle-on")
+    Array.from(checked_tasks).map(task => {
+        task.parentElement.remove(); 
+    });
+  })
+  
 
   const select_icon = document.createElement("i");
   select_icon.classList.add("bi", "bi-check-all");
