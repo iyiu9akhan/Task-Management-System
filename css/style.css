@@ -32,15 +32,37 @@ body {
   /* height: 80vh; */
   width: 600px;
   background-color: #10101d;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 25px;
   /* box-shadow: 9px 10px 159px -51px rgba(0, 0, 0, 0.75); */
   box-shadow: 9px 10px 252px 50px rgba(0, 0, 0, 0.75);
 }
+#container .header{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+  #container .header .warning {
+    font-size: 20px;
+    padding: 5px 50px;
+    /* background-color: #ffffff; */
+    /* background-color: #bb2124; */
+    background-color: #191933;
+    /* margin-bottom: 12px; */
+    border-radius: 3px;
+    color: #bb2124;
+    /* color: #ffffff; */
+    text-transform: capitalize;
+    /* border: 1px solid #bb2124; */
+    border-left: 8px solid #bb2124;
+    /* transition: 1s; */
+}
+
 #container .content_heading {
   text-transform: uppercase;
   color: #ffffff;
-  padding-bottom: 25px;
+  /* padding-bottom: 25px; */
   font-size: 25px;
 }
 #container .input_field {

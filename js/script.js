@@ -18,6 +18,11 @@ const save_task = () => {
     input_box.classList.add("placeholder");
     return;
   }
+  let warning = document.querySelector(".warning");
+
+  if (warning) {
+    warning.remove();
+  }
   //pick input value }
   //{ blank input alert css
   input_box.classList.remove("placeholder");
@@ -64,6 +69,9 @@ const save_task = () => {
   task_box.appendChild(task);
   task.innerHTML = input_box.value;
   input_box.value = "";
+ 
+   
+  
 
   const task_delete = document.createElement("i");
   task_delete.classList.add("bi", "bi-trash3", "delete_task");
@@ -123,14 +131,25 @@ const save_task = () => {
   //   { delete all btn with validation
   delete_btn.addEventListener("click", () => {
     let checked_tasks = document.querySelectorAll(".bi-toggle-on");
+    let warning = document.querySelector(".warning");
 
     if (checked_tasks.length > 0) {
       Array.from(checked_tasks).map((task) => {
         task.parentElement.remove();
         delete_btn_div(); // if task box == 1 , btn_div will remove {function call}
       });
+      if (warning) {
+        warning.remove();
+      }
     } else {
-      console.log("error");
+      if (!warning) {
+        console.log("error");
+        const header = document.querySelector(".header");
+        const warning = document.createElement("h2");
+        warning.classList.add("warning");
+        header.appendChild(warning);
+        warning.innerHTML = "select task !";
+      }
     }
   });
   // delete all btn with validation }
