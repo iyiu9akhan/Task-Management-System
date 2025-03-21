@@ -45,7 +45,7 @@ body {
 }
   #container .header .warning {
     font-size: 20px;
-    padding: 5px 50px;
+    padding: 5px 40px;
     /* background-color: #ffffff; */
     /* background-color: #bb2124; */
     background-color: #191933;
@@ -58,7 +58,21 @@ body {
     border-left: 8px solid #bb2124;
     /* transition: 1s; */
 }
-
+#container .header .success {
+  font-size: 20px;
+  padding: 5px 40px;
+  /* background-color: #ffffff; */
+  /* background-color: #bb2124; */
+  background-color: #191933;
+  /* margin-bottom: 12px; */
+  border-radius: 3px;
+  color: #6cc070;
+  /* color: #ffffff; */
+  text-transform: capitalize;
+  /* border: 1px solid #bb2124; */
+  border-left: 8px solid #6cc070;
+  /* transition: 1s; */
+}
 #container .content_heading {
   text-transform: uppercase;
   color: #ffffff;

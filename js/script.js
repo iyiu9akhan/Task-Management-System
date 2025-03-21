@@ -137,19 +137,38 @@ const save_task = () => {
       Array.from(checked_tasks).map((task) => {
         task.parentElement.remove();
         delete_btn_div(); // if task box == 1 , btn_div will remove {function call}
-      });
-      if (warning) {
-        warning.remove();
-      }
+    });
+        if (warning) {
+          warning.remove();
+        }
+        let header = document.querySelector(".header");
+        let success=document.querySelector(".success")
+       if(!success){
+        let success = document.createElement("h2");
+        success.classList.add("success");
+        header.appendChild(success);
+        success.innerHTML = "deleted";
+       
+    //    setTimeout(()=>{
+    //        success.remove()
+    //    },3000)
+}
+
     } else {
       if (!warning) {
-        console.log("error");
-        const header = document.querySelector(".header");
-        const warning = document.createElement("h2");
+        //   if (success) {
+        //       success.remove();
+        //     }
+        let header = document.querySelector(".header");
+        let warning = document.createElement("h2");
         warning.classList.add("warning");
         header.appendChild(warning);
         warning.innerHTML = "select task !";
-      }
+
+        // setTimeout(()=>{
+        //     warning.remove()
+        // },3000)
+    }
     }
   });
   // delete all btn with validation }
