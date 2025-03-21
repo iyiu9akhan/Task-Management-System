@@ -90,36 +90,29 @@ const save_task = () => {
     var select_btn = document.createElement("button");
     select_btn.classList.add("select_all");
     btn_div.appendChild(select_btn);
-    
-select_btn.addEventListener("click",()=>{
-    let unchecked_btn = document.querySelectorAll(".bi-toggle-off, .bi-toggle-on")
-    Array.from(unchecked_btn).map((task)=>{
-        if(task.classList.contains("bi-toggle-off")){
-            
-            task.classList.replace("bi-toggle-off", "bi-toggle-on")
-        }else{
-            task.classList.replace("bi-toggle-on", "bi-toggle-off")
-            
+
+    select_btn.addEventListener("click", () => {
+      let unchecked_btn = document.querySelectorAll(
+        ".bi-toggle-off, .bi-toggle-on"
+      );
+      Array.from(unchecked_btn).map((task) => {
+        if (task.classList.contains("bi-toggle-off")) {
+          task.classList.replace("bi-toggle-off", "bi-toggle-on");
+        } else {
+          task.classList.replace("bi-toggle-on", "bi-toggle-off");
         }
-    })
-    
-    
-    
-    
+      });
 
+      // if (task_toggle.classList.contains("bi-toggle-off")) {
+      //     task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
+      //     //   task_toggle.classList.add("checked");
+      //   }
 
-    // if (task_toggle.classList.contains("bi-toggle-off")) {
-    //     task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
-    //     //   task_toggle.classList.add("checked");
-    //   } 
-      
-    //   else {
-    //     task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
-    //     //   task_toggle.classList.remove("checked");
-    //   }
-})
-
-
+      //   else {
+      //     task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
+      //     //   task_toggle.classList.remove("checked");
+      //   }
+    });
 
     var delete_btn = document.createElement("button");
     delete_btn.classList.add("delete_all");
