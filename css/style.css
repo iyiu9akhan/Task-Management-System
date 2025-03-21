@@ -61,20 +61,30 @@ body {
   caret-color: #ffffff;
   color: #ffffff;
 }
+/* #input_box::placeholder{
+  color: red;
+} */
+ input.placeholder::placeholder{
+  color: #bb2124;
+ }
 #input_box:focus {
   outline: none;
 }
+/* #input_box:invalid::placeholder {
+  color: red;
+} */
 #container .save_btn {
   color: #ffffff;
   font-size: 35px;
   margin-top: 10px;
   cursor: pointer;
   transition: all linear 0.1s;
+  height: 20px;
 }
 #container .save_btn:active {
-  color: #6cc070;
   /* transform: translateX(-3px) rotate(-30deg); */
-  transition: all linear 0.05s;
+  font-size: 30px;
+  color: #6cc070;
 }
 #container .tasks_field {
   padding-bottom: 25px;
@@ -121,6 +131,11 @@ body {
   margin-left: auto;
   color: #bb2124;
   font-size: 22px;
+  transition: all linear .1s;
+}
+#container .tasks_field .delete_task:hover{
+  color: red;
+  transition: all linear .1s;
 }
 #container .tasks_field .btn {
   display: flex;
@@ -135,6 +150,11 @@ body {
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
+  transition: .1s;
+}
+#container .tasks_field .btn .delete_all:hover{
+  background-color: red;
+  transition: .1s;
 }
 #container .tasks_field .btn .select_all {
   background-color: #6cc070;
@@ -152,6 +172,11 @@ body {
   color: #ffffff;
   font-size: 22px;
   margin-right: 8px;
+  transition: .1s;
+}
+#container .tasks_field .btn .delete_all:hover .bi-trash-fill{
+  background-color: red;
+  transition: .1s;
 }
 #container .tasks_field .btn .bi-check-all {
   text-transform: capitalize;
