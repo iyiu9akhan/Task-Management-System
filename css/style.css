@@ -113,11 +113,14 @@ body {
   font-size: 35px;
   cursor: pointer;
   /* color: #6cc070; */
+  transition: .9s;
 }
 #container .tasks_field .bi-toggle-on {
   color: #6cc070;
   font-size: 35px;
   cursor: pointer;
+  transition: .9s;
+
 }
 #container .tasks_field .task {
   color: #ffffff;
@@ -191,3 +194,6 @@ body {
   font-size: 20px;
   color: #ffffff;
 }
+/* #container .display_none{
+  display: none;
+} */

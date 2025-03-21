@@ -1,6 +1,15 @@
 const save_btn = document.querySelector(".save_btn");
 const input_box = document.getElementById("input_box");
 const content_box = document.getElementsByClassName("content_box")[0];
+// {push value with enter key
+input_box.addEventListener("keydown", (push) => {
+  // console.log(push.key);
+
+  if (push.key == "Enter") {
+    save_task();
+  }
+});
+// push value with enter key }
 //{ pick input value
 const save_task = () => {
   if (input_box.value == "") {
@@ -38,6 +47,24 @@ const save_task = () => {
   task.innerHTML = input_box.value;
   input_box.value = "";
 
+  task_toggle.addEventListener("click", () => {
+    console.log("fine");
+    task_toggle.style.transition="opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
+    task_toggle.style.opacity="0"
+    task_toggle.style.transform="scale(0.8)"
+   setTimeout(()=>{
+    if (task_toggle.classList.contains("bi-toggle-off")) {
+        task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
+      //   task_toggle.classList.add("checked");
+      } else {
+        task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
+      //   task_toggle.classList.remove("checked");
+      }
+      task_toggle.style.opacity="1"
+      task_toggle.style.transform="scale(1)"
+   },120)
+  });
+
   const task_delete = document.createElement("i");
   task_delete.classList.add("bi", "bi-trash3", "delete_task");
   //   task_delete.classList.add("bi-trash3");
@@ -52,6 +79,7 @@ const save_task = () => {
   });
 
   let task_boxes = document.querySelectorAll(".task_box");
+  //   let task_boxes = document.querySelectorAll(".task_box");
   let btn = document.querySelector(".btn");
   if (task_boxes.length === 2 && !btn) {
     var btn_div = document.createElement("div");
