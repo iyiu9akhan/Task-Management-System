@@ -22,45 +22,50 @@ const save_task = () => {
     tasks_field.classList.add("tasks_field");
     content_box.appendChild(tasks_field);
   }
-
+  
   const task_div = document.createElement("div");
   task_div.classList.add("task_box");
   tasks_field.appendChild(task_div);
   console.log(task_div);
+  
   const task_toggle = document.createElement("i");
   task_toggle.classList.add("bi");
   task_toggle.classList.add("bi-toggle-off");
   task_div.appendChild(task_toggle);
+  
   const task = document.createElement("p");
   task.classList.add("task");
   task_div.appendChild(task);
-task.innerHTML=input_box.value
-input_box.value = "";
-
+  task.innerHTML = input_box.value;
+  input_box.value = "";
+  
   const task_delete = document.createElement("i");
-  task_delete.classList.add("bi");
-  task_delete.classList.add("bi-trash3");
-  task_delete.classList.add("delete_task");
+  task_delete.classList.add("bi","bi-trash3","delete_task");
+//   task_delete.classList.add("bi-trash3");
+//   task_delete.classList.add("delete_task");
   task_div.appendChild(task_delete);
-
+  
   
   let btn = document.querySelector(".btn");
   if (!btn) {
-    const btn = document.createElement("div");
-    btn.classList.add("btn");
-    tasks_field.appendChild(btn);
-  } 
-  else {
-    tasks_field.appendChild(btn);
-  }
-  
-  const select_btn = document.createElement("button");
-  delete_btn.classList.add("select_all");
-  btn.appendChild(select_btn);
-  const delete_btn = document.createElement("button");
-  delete_btn.classList.add("delete_all");
-  btn.appendChild(delete_btn);
-  tasks_field.appendChild(task_div);
-  
+    const btn_div = document.createElement("div");
+    btn_div.classList.add("btn");
+    tasks_field.appendChild(btn_div);
+    
+    const select_btn = document.createElement("button");
+    select_btn.classList.add("select_all");
+    btn_div.appendChild(select_btn);
+    
+    const delete_btn = document.createElement("button");
+    delete_btn.classList.add("delete_all");
+    btn_div.appendChild(delete_btn);
+    
+} else {
+    tasks_field.appendChild(btn)
+}
 
+      
+
+
+    // tasks_field.appendChild(task_div);
 };
