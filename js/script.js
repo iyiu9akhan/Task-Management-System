@@ -42,7 +42,6 @@ const save_task = () => {
   task_box.appendChild(task_toggle);
 
   task_toggle.addEventListener("click", () => {
-    console.log("fine");
     task_toggle.style.transition =
       "opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
     task_toggle.style.opacity = "0";
@@ -121,13 +120,20 @@ const save_task = () => {
     tasks_field.appendChild(btn);
   }
 
+  //   { delete all btn with validation
   delete_btn.addEventListener("click", () => {
     let checked_tasks = document.querySelectorAll(".bi-toggle-on");
-    Array.from(checked_tasks).map((task) => {
-      task.parentElement.remove();
-      delete_btn_div(); // if task box == 1 , btn_div will remove {function call}
-    });
+
+    if (checked_tasks.length > 0) {
+      Array.from(checked_tasks).map((task) => {
+        task.parentElement.remove();
+        delete_btn_div(); // if task box == 1 , btn_div will remove {function call}
+      });
+    } else {
+      console.log("error");
+    }
   });
+  // delete all btn with validation }
 
   const select_icon = document.createElement("i");
   select_icon.classList.add("bi", "bi-check-all");
