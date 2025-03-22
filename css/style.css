@@ -156,13 +156,19 @@ body {
   font-size: 35px;
   cursor: pointer;
   /* transition: .5s; */
-
+  
 }
 #container .tasks_field .task {
   color: #ffffff;
   text-transform: capitalize;
   font-size: 18px;
   margin-left: 15px;
+}
+#container .task_box .cross_line{
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  color: #ffffff;
+  opacity: .6;
 }
 #container .tasks_field .delete_task {
   /* flex-grow: 5 */
