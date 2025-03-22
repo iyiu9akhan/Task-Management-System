@@ -110,8 +110,7 @@ const save_task = () => {
       );
       //  { toggle btn off/on condition
       Array.from(unchecked_btn).map((task_box) => {
-        // let task = task_box.querySelector(".task");  
-		 // why this isnt worked ?
+        // let task = task_box.querySelector(".task");  // why this isnt worked ?
         let task = task_box.parentElement.querySelector(".task");
 		
         if (task_box.classList.contains("bi-toggle-off")) {
