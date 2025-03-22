@@ -207,3 +207,5 @@ const delete_btn_div = () => {
 // const delete_task = document.querySelectorAll("delete_task")
 
 // tasks_field.appendChild(task_div);
+
+// check for mac
