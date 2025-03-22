@@ -12,7 +12,7 @@ input_box.addEventListener("keydown", (push) => {
 // push value with enter key }
 //{ pick input value
 const save_task = () => {
-  if (input_box.value == "") {
+  if (input_box.value.trim() === "") {
     input_box.style.borderBottomColor = "#bb2124";
     save_btn.style.color = "#bb2124";
     input_box.classList.add("placeholder");
