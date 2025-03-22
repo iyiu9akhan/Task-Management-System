@@ -16,6 +16,28 @@ const save_task = () => {
     input_box.style.borderBottomColor = "#bb2124";
     save_btn.style.color = "#bb2124";
     input_box.classList.add("placeholder");
+    setTimeout(() => {
+      input_box.classList.remove("placeholder"); 
+      input_box.style.borderBottomColor = "#ffffff";
+      save_btn.style.color = "#ffffff";
+    }, 3000);
+
+    // {input invalid alert msg
+    let warning = document.querySelector(".warning");
+    if (!warning) {
+      let header = document.querySelector(".header");
+      let warning = document.createElement("h2");
+      warning.classList.add("warning");
+      header.appendChild(warning);
+      warning.innerHTML = "add task !";
+
+      // {alert msg will be cleared after 3s
+      setTimeout(() => {
+        warning.remove();
+      }, 3000);
+      // {input invalid alert msg
+    }
+
     return;
   }
   let warning = document.querySelector(".warning");
@@ -23,6 +45,7 @@ const save_task = () => {
   if (warning) {
     warning.remove();
   }
+
   //pick input value }
   //{ blank input alert css
   input_box.classList.remove("placeholder");
@@ -87,7 +110,7 @@ const save_task = () => {
       tasks_field.remove();
     } else {
       task_box.remove();
-      delete_btn_div();
+      delete_btn_div(); //another funtion for delete  full btn div
     }
     // if task box == 1 , btn_div will remove / also task_field will be cleared {function call}
   });
@@ -112,7 +135,7 @@ const save_task = () => {
       Array.from(unchecked_btn).map((task_box) => {
         // let task = task_box.querySelector(".task");  // why this isnt worked ?
         let task = task_box.parentElement.querySelector(".task");
-		
+
         if (task_box.classList.contains("bi-toggle-off")) {
           task_box.classList.replace("bi-toggle-off", "bi-toggle-on");
           task.classList.add("cross_line");
@@ -227,7 +250,7 @@ const save_task = () => {
   delete_btn.appendChild(delete_btn_text);
 };
 
-// if task box == 1 , btn_div will remove {function assign}
+// {if task box == 1 , btn_div will remove {function assign}
 const delete_btn_div = () => {
   let task_boxes = document.querySelectorAll(".task_box");
   let btn = document.querySelector(".btn");
@@ -237,6 +260,7 @@ const delete_btn_div = () => {
     }
   }
 };
+// if task box == 1 , btn_div will remove {function assign}}
 
 // const delete_task= ()=>{
 //     task_box.classList.remove("task_box");
