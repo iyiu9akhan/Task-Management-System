@@ -17,34 +17,67 @@ const save_task = () => {
     save_btn.style.color = "#bb2124";
     input_box.classList.add("placeholder");
     setTimeout(() => {
-      input_box.classList.remove("placeholder"); 
+      input_box.classList.remove("placeholder");
       input_box.style.borderBottomColor = "#ffffff";
       save_btn.style.color = "#ffffff";
     }, 3000);
 
     // {input invalid alert msg
-    let warning = document.querySelector(".warning");
-    if (!warning) {
-      let header = document.querySelector(".header");
-      let warning = document.createElement("h2");
-      warning.classList.add("warning");
-      header.appendChild(warning);
-      warning.innerHTML = "add task !";
-
-      // {alert msg will be cleared after 3s
-      setTimeout(() => {
-        warning.remove();
-      }, 3000);
-      // {input invalid alert msg
+    let input_warning = document.querySelector(".input_warning");
+    if (!input_warning) {
+		let header = document.querySelector(".header");
+		let input_warning = document.createElement("h2");
+		input_warning.classList.add("input_warning");
+		header.appendChild(input_warning);
+		input_warning.innerHTML = "add task !";
+		
+		// {alert msg will be cleared after 3s
+		setTimeout(() => {
+			input_warning.remove();
+		}, 3000);
+		// {input invalid alert msg
     }
+	let warning = document.querySelector(".warning");
+	let success = document.querySelector(".success");
+	if (warning) {
+	   warning.remove();
+		// success.remove()
+	 }
+	 if(success){
+		success.remove() //this will remove warning if already exist (dlt alert of select task error)
+	 }
+	 return;
+	 
+	}
 
-    return;
-  }
-  let warning = document.querySelector(".warning");
+	// {check for any alrt msg while valid input
+	let input_warning = document.querySelector(".input_warning");
+	let warning = document.querySelector(".warning");
+	let success = document.querySelector(".success");
 
-  if (warning) {
-    warning.remove();
-  }
+	 if(input_warning){
+		input_warning.remove()
+	 }
+	 if(warning){
+		warning.remove()
+	 }
+	 if(success){
+		success.remove()
+	 }
+	// check for any alrt msg while valid input}
+
+
+
+	// let input_warning = document.querySelector(".input_warning");
+
+// let warning = document.querySelector(".warning");
+//  if (warning) {
+//     warning.remove();
+//   }
+  
+//   else if(input_warning){
+// 	input_warning.remove()
+//   }
 
   //pick input value }
   //{ blank input alert css
@@ -106,9 +139,32 @@ const save_task = () => {
   // const delete_task = document.querySelectorAll("delete_task")
 
   task_delete.addEventListener("click", () => {
-    if (task_boxes.length == 1) {
-      tasks_field.remove();
+	let task_boxes = document.querySelectorAll(".task_box");
+    if (task_boxes.length === 1) {
+      tasks_field.remove(); //this will remove task field
     } else {
+		let header = document.querySelector(".header");
+		let success = document.querySelector(".success");
+		let warning = document.querySelector(".warning");
+		let input_warning = document.querySelector(".input_warning");
+		
+		if (!success) {
+			let success = document.createElement("h2");
+		  success.classList.add("success");
+		  header.appendChild(success);
+		  success.innerHTML = "deleted";
+		 if(warning){
+			warning.remove() //this will remove warning if already exist
+		 }
+		 if(input_warning){
+			input_warning.remove()
+		 }
+  
+		  // { alert msg will be cleared after 3s
+		  setTimeout(() => {
+			success.remove();
+		  }, 3000);}
+
       task_box.remove();
       delete_btn_div(); //another funtion for delete  full btn div
     }
@@ -171,13 +227,16 @@ const save_task = () => {
   delete_btn.addEventListener("click", () => {
     let checked_tasks = document.querySelectorAll(".bi-toggle-on");
     let warning = document.querySelector(".warning");
+    let input_warning = document.querySelector(".input_warning");
     let success = document.querySelector(".success");
 
     // { if alert msg also exist , this will remove that
     // let exist_alrt = document.querySelector(".warning , .success")
     if (success) {
       success.remove();
-    }
+    }else if(input_warning){
+		input_warning.remove()
+	}
     // else if(success){
     //   success.remove()
     // }
