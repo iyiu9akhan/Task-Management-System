@@ -250,4 +250,3 @@ const delete_btn_div = () => {
 
 // tasks_field.appendChild(task_div);
 
-// check from mac002
