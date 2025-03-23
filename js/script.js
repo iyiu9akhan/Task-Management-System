@@ -245,10 +245,6 @@ const save_task = () => {
       });
       // toggle btn Off/on condition }
 
-      // if (task_toggle.classList.contains("bi-toggle-off")) {
-      //     task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
-      //     //   task_toggle.classList.add("checked");
-      //   }
 
       //   else {
       //     task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
