@@ -21,7 +21,7 @@ let update_limit = () => {
 
   if (limit_left <= 6) {
     character_limit.style.color = "red";
-  } else {
+  }  else {
     character_limit.style.color = "#ffffff";
   }
 };
@@ -49,9 +49,6 @@ input_box.addEventListener("keydown", (enter) => {
 // push value with enter key }
 //{ pick input value
 const save_task = () => {
-	
-
-
   if (input_box.value.trim() === "") {
     input_box.style.borderBottomColor = "#bb2124";
     save_btn.style.color = "#bb2124";
@@ -86,8 +83,8 @@ const save_task = () => {
     if (success) {
       success.remove(); //this will remove warning if already exist (dlt alert of select task error)
     }
-	// let character_limit = document.querySelector(".character_limit");
-	// character_limit.style.color = "#ffffff";
+    // let character_limit = document.querySelector(".character_limit");
+    // character_limit.style.color = "#ffffff";
     return;
   }
 
@@ -163,7 +160,6 @@ const save_task = () => {
       task_toggle.style.opacity = "1";
       task_toggle.style.transform = "scale(1)";
     }, 100);
-
   });
   // toggle on/off class changing }
 
@@ -278,10 +274,8 @@ const save_task = () => {
     // let exist_alrt = document.querySelector(".warning , .success")
     if (success) {
       success.remove();
-
     } else if (input_warning) {
       input_warning.remove();
-
     }
     // else if(success){
     //   success.remove()
@@ -353,8 +347,6 @@ const save_task = () => {
   //   delete_icon.classList.add("bi", "bi-trash-fill");
   delete_btn_text.innerHTML = "delete all";
   delete_btn.appendChild(delete_btn_text);
-
-
 };
 
 // {if task box == 1 , btn_div will remove {function assign}
