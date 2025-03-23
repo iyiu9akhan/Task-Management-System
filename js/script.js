@@ -1,6 +1,47 @@
 const save_btn = document.querySelector(".save_btn");
 const input_box = document.getElementById("input_box");
 const content_box = document.getElementsByClassName("content_box")[0];
+
+
+// { created a class for character limit digit 
+let input_field = document.querySelector(".input_field")
+let character_limit = document.createElement("h6")
+character_limit.classList.add("character_limit")
+input_field.appendChild(character_limit)
+character_limit.innerHTML="53"
+// created a class for character limit digit }
+
+
+// { before = save_btn , character_limit || after : character_limit , save_btn 
+save_btn.parentNode.insertBefore(character_limit,save_btn)
+//  before = save_btn , character_limit || after : character_limit , save_btn }  
+
+
+
+let update_limit = ()=>{
+	let limit_left = 53 - input_box.value.length;
+	character_limit.innerHTML = limit_left >= 0 ? limit_left : "0";
+
+	if(limit_left <= 6){
+		character_limit.style.color="red"
+	}else{
+		character_limit.style.color="#ffffff"
+	}
+}
+
+input_box.addEventListener("input" , update_limit);
+
+
+input_box.addEventListener("keydown" , (event)=>{
+	if(input_box.value.length >= 53 && event.key !== "Backspace"){
+		event.preventDefault()
+
+	}
+
+})
+
+
+
 // {push value with enter key
 input_box.addEventListener("keydown", (push) => {
   // console.log(push.key);

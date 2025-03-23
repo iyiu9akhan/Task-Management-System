@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: 600px; */
 }
 #container .content_box {
   /* height: 80vh; */
@@ -83,6 +84,10 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  /* align-items: center; */
+  position: relative;
+  align-items: center;
+  /* width: 600px; */
 }
 #input_box {
   background-color: transparent;
@@ -91,11 +96,26 @@ body {
   height: 50px;
   /* width: 50vh; */
   width: 90%;
+  /* width: 600px; */
   text-transform: capitalize;
   font-size: 18px;
   padding: 5px;
   caret-color: #ffffff;
   color: #ffffff;
+  padding-right: 49px;
+}
+
+#container .input_field .character_limit{
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-right: 13px;
+  position: absolute;
+  /* right:269px; */
+  /* left: 0; */
+  right: 49px;
+  margin-bottom: 13px;
+  /* margin-right: 12px;  */
 }
 /* #input_box::placeholder{
   color: red;
@@ -111,11 +131,12 @@ body {
 } */
 #container .save_btn {
   color: #ffffff;
-  font-size: 35px;
-  margin-top: 10px;
+  font-size: 36px;
+  /* margin-top: 10px; */
   cursor: pointer;
   transition: all linear 0.1s;
-  height: 20px;
+  height: 19px;
+  margin-bottom: 19px;
 }
 #container .save_btn:active {
   /* transform: translateX(-3px) rotate(-30deg); */
@@ -124,6 +145,7 @@ body {
 }
 #container .tasks_field {
   padding-bottom: 25px;
+  /* width: 600px; */
   /* display: flex;
   flex-direction: column-reverse; */
 }
@@ -135,6 +157,7 @@ body {
   margin-bottom: 15px;
   align-items: center;
   border-radius: 12px;
+  /* width: 600px; */
 }
 #container .tasks_field .check_task {
   cursor: pointer;
@@ -162,7 +185,9 @@ body {
   color: #ffffff;
   text-transform: capitalize;
   font-size: 18px;
-  margin-left: 15px;
+  margin-left: 16px;
+  margin-right: 16px;
+  width: 441px;
 }
 #container .task_box .cross_line{
   text-decoration: line-through;
