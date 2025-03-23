@@ -2,57 +2,56 @@ const save_btn = document.querySelector(".save_btn");
 const input_box = document.getElementById("input_box");
 const content_box = document.getElementsByClassName("content_box")[0];
 
-
-// { created a class for character limit digit 
-let input_field = document.querySelector(".input_field")
-let character_limit = document.createElement("h6")
-character_limit.classList.add("character_limit")
-input_field.appendChild(character_limit)
-character_limit.innerHTML="53"
+// { created a class for character limit digit
+let limit = 50;
+let input_field = document.querySelector(".input_field");
+let character_limit = document.createElement("h6");
+character_limit.classList.add("character_limit");
+input_field.appendChild(character_limit);
+character_limit.innerHTML = limit;
 // created a class for character limit digit }
 
+// { before = save_btn , character_limit || after : character_limit , save_btn
+save_btn.parentNode.insertBefore(character_limit, save_btn);
+//  before = save_btn , character_limit || after : character_limit , save_btn }
 
-// { before = save_btn , character_limit || after : character_limit , save_btn 
-save_btn.parentNode.insertBefore(character_limit,save_btn)
-//  before = save_btn , character_limit || after : character_limit , save_btn }  
+let update_limit = () => {
+  let limit_left = limit - input_box.value.length;
+  character_limit.innerHTML = limit_left >= 0 ? limit_left : "0";
 
+  if (limit_left <= 6) {
+    character_limit.style.color = "red";
+  } else {
+    character_limit.style.color = "#ffffff";
+  }
+};
 
+input_box.addEventListener("input", update_limit);
 
-let update_limit = ()=>{
-	let limit_left = 53 - input_box.value.length;
-	character_limit.innerHTML = limit_left >= 0 ? limit_left : "0";
-
-	if(limit_left <= 6){
-		character_limit.style.color="red"
-	}else{
-		character_limit.style.color="#ffffff"
-	}
-}
-
-input_box.addEventListener("input" , update_limit);
-
-
-input_box.addEventListener("keydown" , (event)=>{
-	if(input_box.value.length >= 53 && event.key !== "Backspace"){
-		event.preventDefault()
-
-	}
-
-})
-
-
+input_box.addEventListener("keydown", (event) => {
+  if (input_box.value.length >= limit && event.key !== "Backspace") {
+    event.preventDefault();
+  }
+});
 
 // {push value with enter key
-input_box.addEventListener("keydown", (push) => {
+input_box.addEventListener("keydown", (enter) => {
   // console.log(push.key);
 
-  if (push.key == "Enter") {
+  if (enter.key == "Enter") {
     save_task();
   }
 });
+// save_btn.addEventListener("click",()=>{
+// 	character_limit.innerHTML ="0"
+// })
+
 // push value with enter key }
 //{ pick input value
 const save_task = () => {
+	
+
+
   if (input_box.value.trim() === "") {
     input_box.style.borderBottomColor = "#bb2124";
     save_btn.style.color = "#bb2124";
@@ -66,59 +65,61 @@ const save_task = () => {
     // {input invalid alert msg
     let input_warning = document.querySelector(".input_warning");
     if (!input_warning) {
-		let header = document.querySelector(".header");
-		let input_warning = document.createElement("h2");
-		input_warning.classList.add("input_warning");
-		header.appendChild(input_warning);
-		input_warning.innerHTML = "add task !";
-		
-		// {alert msg will be cleared after 3s
-		setTimeout(() => {
-			input_warning.remove();
-		}, 3000);
-		// {input invalid alert msg
+      let header = document.querySelector(".header");
+      let input_warning = document.createElement("h2");
+      input_warning.classList.add("input_warning");
+      header.appendChild(input_warning);
+      input_warning.innerHTML = "add task !";
+
+      // {alert msg will be cleared after 3s
+      setTimeout(() => {
+        input_warning.remove();
+      }, 3000);
+      // {input invalid alert msg
     }
-	let warning = document.querySelector(".warning");
-	let success = document.querySelector(".success");
-	if (warning) {
-	   warning.remove();
-		// success.remove()
-	 }
-	 if(success){
-		success.remove() //this will remove warning if already exist (dlt alert of select task error)
-	 }
-	 return;
-	 
-	}
+    let warning = document.querySelector(".warning");
+    let success = document.querySelector(".success");
+    if (warning) {
+      warning.remove();
+      // success.remove()
+    }
+    if (success) {
+      success.remove(); //this will remove warning if already exist (dlt alert of select task error)
+    }
+	// let character_limit = document.querySelector(".character_limit");
+	// character_limit.style.color = "#ffffff";
+    return;
+  }
 
-	// {check for any alrt msg while valid input
-	let input_warning = document.querySelector(".input_warning");
-	let warning = document.querySelector(".warning");
-	let success = document.querySelector(".success");
+  // {check for any alrt msg while valid input
+  let input_warning = document.querySelector(".input_warning");
+  let warning = document.querySelector(".warning");
+  let success = document.querySelector(".success");
+  var character_limit = document.querySelector(".character_limit");
 
-	 if(input_warning){
-		input_warning.remove()
-	 }
-	 if(warning){
-		warning.remove()
-	 }
-	 if(success){
-		success.remove()
-	 }
-	// check for any alrt msg while valid input}
+  character_limit.innerHTML = limit;
 
+  if (input_warning) {
+    input_warning.remove();
+  }
+  if (warning) {
+    warning.remove();
+  }
+  if (success) {
+    success.remove();
+  }
+  // check for any alrt msg while valid input}
 
+  // let input_warning = document.querySelector(".input_warning");
 
-	// let input_warning = document.querySelector(".input_warning");
+  // let warning = document.querySelector(".warning");
+  //  if (warning) {
+  //     warning.remove();
+  //   }
 
-// let warning = document.querySelector(".warning");
-//  if (warning) {
-//     warning.remove();
-//   }
-  
-//   else if(input_warning){
-// 	input_warning.remove()
-//   }
+  //   else if(input_warning){
+  // 	input_warning.remove()
+  //   }
 
   //pick input value }
   //{ blank input alert css
@@ -162,6 +163,7 @@ const save_task = () => {
       task_toggle.style.opacity = "1";
       task_toggle.style.transform = "scale(1)";
     }, 100);
+
   });
   // toggle on/off class changing }
 
@@ -180,31 +182,32 @@ const save_task = () => {
   // const delete_task = document.querySelectorAll("delete_task")
 
   task_delete.addEventListener("click", () => {
-	let task_boxes = document.querySelectorAll(".task_box");
+    let task_boxes = document.querySelectorAll(".task_box");
     if (task_boxes.length === 1) {
       tasks_field.remove(); //this will remove task field
     } else {
-		let header = document.querySelector(".header");
-		let success = document.querySelector(".success");
-		let warning = document.querySelector(".warning");
-		let input_warning = document.querySelector(".input_warning");
-		
-		if (!success) {
-			let success = document.createElement("h2");
-		  success.classList.add("success");
-		  header.appendChild(success);
-		  success.innerHTML = "deleted";
-		 if(warning){
-			warning.remove() //this will remove warning if already exist
-		 }
-		 if(input_warning){
-			input_warning.remove()
-		 }
-  
-		  // { alert msg will be cleared after 3s
-		  setTimeout(() => {
-			success.remove();
-		  }, 3000);}
+      let header = document.querySelector(".header");
+      let success = document.querySelector(".success");
+      let warning = document.querySelector(".warning");
+      let input_warning = document.querySelector(".input_warning");
+
+      if (!success) {
+        let success = document.createElement("h2");
+        success.classList.add("success");
+        header.appendChild(success);
+        success.innerHTML = "deleted";
+        if (warning) {
+          warning.remove(); //this will remove warning if already exist
+        }
+        if (input_warning) {
+          input_warning.remove();
+        }
+
+        // { alert msg will be cleared after 3s
+        setTimeout(() => {
+          success.remove();
+        }, 3000);
+      }
 
       task_box.remove();
       delete_btn_div(); //another funtion for delete  full btn div
@@ -275,9 +278,11 @@ const save_task = () => {
     // let exist_alrt = document.querySelector(".warning , .success")
     if (success) {
       success.remove();
-    }else if(input_warning){
-		input_warning.remove()
-	}
+
+    } else if (input_warning) {
+      input_warning.remove();
+
+    }
     // else if(success){
     //   success.remove()
     // }
@@ -348,6 +353,8 @@ const save_task = () => {
   //   delete_icon.classList.add("bi", "bi-trash-fill");
   delete_btn_text.innerHTML = "delete all";
   delete_btn.appendChild(delete_btn_text);
+
+
 };
 
 // {if task box == 1 , btn_div will remove {function assign}
