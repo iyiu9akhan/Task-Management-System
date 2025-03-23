@@ -2,7 +2,7 @@ Title :
    Task Management System { TO-DO }
 
 Description : 
-   This is lightweight and user-friendly task management application built with JavaScript / DOM Manipulation.
+   This is an user-friendly task management application built with JavaScript / DOM Manipulation.
    This project demonstrates clean code, DOM manipulation, and interactive UI design |
 
 Key Features:
