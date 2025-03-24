@@ -268,10 +268,6 @@ const save_task = () => {
     } else if (input_warning) {
       input_warning.remove();
     }
-    // else if(success){
-    //   success.remove()
-    // }
-    // if alert msg also exist , this will remove that }
 
     // { if task box == 1 , btn_div will remove { if function call}
     if (checked_tasks.length > 0) {
