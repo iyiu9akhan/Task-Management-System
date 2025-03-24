@@ -245,11 +245,6 @@ const save_task = () => {
       });
       // toggle btn Off/on condition }
 
-
-      //   else {
-      //     task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
-      //     //   task_toggle.classList.remove("checked");
-      //   }
     });
 
     var delete_btn = document.createElement("button");
