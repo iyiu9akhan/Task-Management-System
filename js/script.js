@@ -355,12 +355,3 @@ const delete_btn_div = () => {
     }
   }
 };
-// if task box == 1 , btn_div will remove {function assign}}
-
-// const delete_task= ()=>{
-//     task_box.classList.remove("task_box");
-
-// }
-// const delete_task = document.querySelectorAll("delete_task")
-
-// tasks_field.appendChild(task_div);
