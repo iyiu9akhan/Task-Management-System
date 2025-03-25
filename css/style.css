@@ -188,6 +188,7 @@ body {
   margin-left: 16px;
   margin-right: 16px;
   width: 441px;
+  word-wrap: break-word;
 }
 #container .task_box .cross_line{
   text-decoration: line-through;

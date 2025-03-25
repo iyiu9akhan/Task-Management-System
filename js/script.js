@@ -36,8 +36,6 @@ input_box.addEventListener("keydown", (event) => {
 
 // {push value with enter key
 input_box.addEventListener("keydown", (enter) => {
-  // console.log(push.key);
-
   if (enter.key == "Enter") {
     save_task();
   }
@@ -89,7 +87,10 @@ const save_task = () => {
   let success = document.querySelector(".success");
   var character_limit = document.querySelector(".character_limit");
 
+  // { digit and color reset after enter/push data 
   character_limit.innerHTML = limit;
+  character_limit.style.color = "#ffffff";
+  // digit and color reset after enter/push data }
 
   if (input_warning) {
     input_warning.remove();
@@ -192,8 +193,10 @@ const save_task = () => {
   });
 
   let task_boxes = document.querySelectorAll(".task_box");
-  //   let task_boxes = document.querySelectorAll(".task_box");
   let btn = document.querySelector(".btn");
+  
+  var delete_btn = document.createElement("button");
+
   if (task_boxes.length === 2 && !btn) {
     var btn_div = document.createElement("div");
     btn_div.classList.add("btn");
@@ -224,7 +227,6 @@ const save_task = () => {
 
     });
 
-    var delete_btn = document.createElement("button");
     delete_btn.classList.add("delete_all");
     btn_div.appendChild(delete_btn);
   } else {
