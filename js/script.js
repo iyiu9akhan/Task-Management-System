@@ -42,11 +42,8 @@ input_box.addEventListener("keydown", (enter) => {
     save_task();
   }
 });
-// save_btn.addEventListener("click",()=>{
-// 	character_limit.innerHTML ="0"
-// })
-
 // push value with enter key }
+
 //{ pick input value
 const save_task = () => {
   if (input_box.value.trim() === "") {
@@ -83,8 +80,6 @@ const save_task = () => {
     if (success) {
       success.remove(); //this will remove warning if already exist (dlt alert of select task error)
     }
-    // let character_limit = document.querySelector(".character_limit");
-    // character_limit.style.color = "#ffffff";
     return;
   }
 
@@ -107,23 +102,13 @@ const save_task = () => {
   }
   // check for any alrt msg while valid input}
 
-  // let input_warning = document.querySelector(".input_warning");
-
-  // let warning = document.querySelector(".warning");
-  //  if (warning) {
-  //     warning.remove();
-  //   }
-
-  //   else if(input_warning){
-  // 	input_warning.remove()
-  //   }
-
   //pick input value }
   //{ blank input alert css
   input_box.classList.remove("placeholder");
   input_box.style.borderBottomColor = "#ffffff";
   save_btn.style.color = "#ffffff";
   //blank input alert css }
+
   //{ create task field div
   let tasks_field = document.querySelector(".tasks_field");
   if (!tasks_field) {
@@ -132,6 +117,7 @@ const save_task = () => {
     content_box.appendChild(tasks_field);
   }
   //create task field div }
+
   //{create task box div
   const task_box = document.createElement("div");
   task_box.classList.add("task_box");
@@ -151,11 +137,9 @@ const save_task = () => {
       if (task_toggle.classList.contains("bi-toggle-off")) {
         task_toggle.classList.replace("bi-toggle-off", "bi-toggle-on");
         task.classList.add("cross_line");
-        //   task_toggle.classList.add("checked");
       } else {
         task_toggle.classList.replace("bi-toggle-on", "bi-toggle-off");
         task.classList.remove("cross_line");
-        //   task_toggle.classList.remove("checked");
       }
       task_toggle.style.opacity = "1";
       task_toggle.style.transform = "scale(1)";
@@ -171,11 +155,7 @@ const save_task = () => {
 
   const task_delete = document.createElement("i");
   task_delete.classList.add("bi", "bi-trash3", "delete_task");
-  //   task_delete.classList.add("bi-trash3");
-  //   task_delete.classList.add("delete_task");
   task_box.appendChild(task_delete);
-
-  // const delete_task = document.querySelectorAll("delete_task")
 
   task_delete.addEventListener("click", () => {
     let task_boxes = document.querySelectorAll(".task_box");
@@ -239,9 +219,6 @@ const save_task = () => {
           task_box.classList.replace("bi-toggle-on", "bi-toggle-off");
           task.classList.remove("cross_line");
         }
-        // else {
-        // 	task_box.classList.replace("bi-toggle-on", "bi-toggle-on");
-        // }
       });
       // toggle btn Off/on condition }
 
@@ -262,13 +239,11 @@ const save_task = () => {
     let success = document.querySelector(".success");
 
     // { if alert msg also exist , this will remove that
-    // let exist_alrt = document.querySelector(".warning , .success")
     if (success) {
       success.remove();
     } else if (input_warning) {
       input_warning.remove();
     }
-
     // { if task box == 1 , btn_div will remove { if function call}
     if (checked_tasks.length > 0) {
       Array.from(checked_tasks).map((task) => {
@@ -301,9 +276,6 @@ const save_task = () => {
       }
     } else {
       if (!warning) {
-        //   if (success) {
-        //       success.remove();
-        //     }
         let header = document.querySelector(".header");
         let warning = document.createElement("h2");
         warning.classList.add("warning");
@@ -331,7 +303,6 @@ const save_task = () => {
   delete_icon.classList.add("bi", "bi-trash-fill");
   delete_btn.appendChild(delete_icon);
   const delete_btn_text = document.createElement("h6");
-  //   delete_icon.classList.add("bi", "bi-trash-fill");
   delete_btn_text.innerHTML = "delete all";
   delete_btn.appendChild(delete_btn_text);
 };
