@@ -172,7 +172,7 @@ const save_task = () => {
         let success = document.createElement("h2");
         success.classList.add("success");
         header.appendChild(success);
-        success.innerHTML = "deleted";
+        success.innerHTML = "success";
         if (warning) {
           warning.remove(); //this will remove warning if already exist
         }
@@ -193,7 +193,7 @@ const save_task = () => {
   });
 
   let task_boxes = document.querySelectorAll(".task_box");
-  let btn = document.querySelector(".btn");
+  let btn = document.querySelector(".btn"); 
   
   var delete_btn = document.createElement("button");
 
